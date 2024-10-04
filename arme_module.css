@@ -1,0 +1,723 @@
+@font-face {
+    font-family: "Segoe UI Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Segoe UI Regular"), url("SegoeUI.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Segoe UI Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Segoe UI Italic"), url("SegoeUI_italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Segoe UI Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Segoe UI Bold"), url("SegoeUI_bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Segoe UI Bold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Segoe UI Bold Italic"), url("SegoeUI_bold_italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Big Shoulders Inline Display Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Big Shoulders Inline Display Bold"), url("BigShouldersInlineDisplay-Bold.ttf") format("truetype");
+}
+
+body {
+    font-family: "Segoe UI Regular", sans-serif;
+    font-size: 13px;
+}
+
+.equipment {
+    width: 362px;
+    background-color: #bee3f5;
+    position: relative;
+    margin: 25px auto;
+}
+
+.equipment:before {
+    position:absolute; 
+    left: 0px; 
+    top: 0px; 
+    content:'';
+    border-top: 30px solid #45afce;
+    border-right: 30px solid transparent;
+}
+
+.equipment:after {
+    position:absolute; 
+    left: -2px; 
+    top: -2px; 
+    content:'';
+    border-top: 30px solid white;
+    border-right: 30px solid transparent;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background:
+        linear-gradient(90deg,
+            transparent 0px,
+            #2b2c2c 40%
+        ),
+        repeating-linear-gradient(135deg,
+            #2b2c2c 0px,
+            #2b2c2c 2px,
+            #585858 4px,
+            #2b2c2c 6px
+        );
+    box-shadow: 0 0 8px 8px #2b2c2c inset;
+    border-top: 2px solid #45afce;
+    border-right: 2px solid #45afce;
+    border-left: 2px solid #45afce;
+    height: 51px;
+    overflow: hidden;
+}
+
+.module .header {
+    background: 
+        linear-gradient(90deg,
+            transparent 0px,
+            #2b2c2c 40%
+        ),
+        linear-gradient(90deg, 
+            #2b2c2c calc(6px - 1px), 
+            transparent 1%
+        ) center / 6px 6px,
+        linear-gradient(
+            #2b2c2c calc(6px - 1px),
+            transparent 1%
+        ) center / 6px 6px,
+        #45afce;
+}
+
+.logo {
+    width: 70px;
+}
+
+.logo .logo_container {
+    width: 52px;
+    height: 52px;
+    position: relative;
+    left: 20px;
+    bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    filter: invert(1);
+    height: 40px;
+    width: 40px;
+}
+
+.module .logo_container {
+    border: 2px solid #45afce;
+    border-radius: 100%;;
+    background: radial-gradient(circle, 
+        #377d63 0%, 
+        transparent 100%
+    ),
+    #2b2c2c;
+}
+
+.title {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title .name {
+    font-family: "Segoe UI Bold", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+    padding-top: 7px;
+    margin-right: 20px;
+}
+
+.title .name.long {
+    font-size: 12px;
+    padding-top: 0;
+}
+
+.title .type {
+    background-color: #45afce;
+    text-align: center;
+    margin-left: 12px; 
+    margin-right: 46px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.title .type:before {
+    position: absolute; 
+    left: -17px; 
+    top: 0px; 
+    content:'';
+    border-bottom: 17px solid #45afce;
+    border-left: 17px solid transparent;
+}
+
+.title .type:after {
+    position: absolute; 
+    right: -17px; 
+    top: 0px; 
+    content:'';
+    border-top: 17px solid #45afce;
+    border-right: 17px solid transparent;
+}
+
+.cost {
+    color: #f04827;
+    font-family: "Segoe UI Bold", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 37px;
+    padding-top: 8px;
+    line-height: 15px;
+    position: relative;
+}
+
+.cost:before {
+    position: absolute; 
+    left: -51px; 
+    top: -2px; 
+    content:'';
+    border-bottom: 51px solid #45afce;
+    border-left: 51px solid transparent;
+}
+
+.cost:after {
+    position: absolute; 
+    left: -49px; 
+    top: 0px; 
+    content:'';
+    border-bottom: 49px solid #2b2c2c;
+    border-left: 49px solid transparent;
+}
+
+.nickname {
+    font-family: "Segoe UI Italic", sans-serif;
+    text-align: right;
+    font-size: 12px;
+}
+
+.description {
+    text-align: justify;
+    padding: 5px;
+    border-left: 2px solid #32b7dc;
+    border-right: 2px solid #32b7dc;
+}
+
+.description p {
+    margin: 5px 0;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+}
+
+.rules > div {
+    display: flex;
+    flex-direction: row;
+    background-color: #32b7dc;
+    border-top: 1px solid #32b7dc;
+    border-bottom: 1px solid #32b7dc;
+    border-left: 2px solid #32b7dc;
+    border-right: 2px solid #32b7dc;
+}
+
+.rules > div:last-child {
+    display: flex;
+    flex-direction: row;
+    background-color: #32b7dc;
+    border-bottom-width: 2px;
+}
+
+.rules .rule_name {
+    display: grid;
+    align-items: center;
+    font-family: "Segoe UI Bold", sans-serif;
+    font-weight: normal;
+    text-align: center;
+    width: 70px;
+    min-width: 70px;
+    padding: 0 10px;
+}
+
+.rules .rule_description {
+    background-color: #bee3f5;
+    text-align: justify;
+    padding: 0 3px;
+}
+
+.stats {
+    flex: 1 1 auto;
+}
+
+.stat_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.stat_line > div {
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat_line .name {
+    text-transform: uppercase;
+    font-family: "Segoe UI Bold", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+
+.stat_line .value {
+    text-align: center;
+    background-color: #bee3f5;
+    padding: 0 5px;
+    flex-grow: 1;
+    font-size: 11px;
+}
+
+.effects {
+    background-color: #bee3f5;
+    margin-top: 2px;
+    font-size: 11px;
+    padding-left: 3px;
+}
+
+.effects strong {
+    letter-spacing: 0.5px;
+}
+
+.upgrade {
+    color: #f04827;
+    font-family: "Segoe UI Bold", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.upgrade .subtype {
+    text-transform: uppercase;
+    color: black;
+    font-size: 14px;
+    margin-right: 5px;
+} 
+
+/* Advanced */
+
+.advanced.equipment {
+    background-color: #ded5e9;
+}
+
+.advanced.equipment:before {
+    border-top-color: #cb559f;
+}
+
+.advanced .header {
+    border-top-color: #cb559f;
+    border-right-color: #cb559f;
+    border-left-color: #cb559f;
+}
+
+.advanced .title .type {
+    background-color: #cb559f;
+}
+
+.advanced .title .type:before {
+    border-bottom-color: #cb559f;
+}
+
+.advanced .title .type:after {
+    border-top-color:#cb559f;
+    border-right-color:transparent;
+}
+
+.advanced .cost:before {
+    border-bottom-color: #cb559f;
+    border-left-color: transparent;
+}
+
+.advanced .description {
+    border-left-color: #c162a6;
+    border-right-color: #c162a6;
+}
+
+.advanced .rules > div {
+    background-color: #c162a6;
+    border-color: #c162a6;
+}
+
+.advanced .stat_line .value {
+    background-color: #ded5e9;
+}
+
+.advanced .effects {
+    background-color: #ded5e9;
+}
+
+.advanced .rules .rule_description {
+    background-color: #ded5e9;
+}
+
+.rules > div.advanced {
+    background-color: #c162a6;
+    border-color: #c162a6;
+} 
+
+.rules > div.advanced .rule_description,
+.rules > div.advanced .value,
+.rules > div.advanced .effects
+{
+    background-color: #ded5e9;
+} 
+
+.advanced.module .logo_container {
+    border-color: #c162a6;
+    background: radial-gradient(circle, 
+        #684a9d 0%, 
+        transparent 100%
+    ),
+    #2b2c2c;
+}
+
+.advanced.module .header {
+    background: 
+        linear-gradient(90deg,
+            transparent 0px,
+            #2b2c2c 40%
+        ),
+        linear-gradient(90deg, 
+            #2b2c2c calc(6px - 1px), 
+            transparent 1%
+        ) center / 6px 6px,
+        linear-gradient(
+            #2b2c2c calc(6px - 1px),
+            transparent 1%
+        ) center / 6px 6px,
+        #cb559f;
+}
+
+/* Rare */
+
+.rare.equipment {
+    background-color: #fee6ca;
+}
+
+.rare.equipment:before {
+    border-top-color: #f58b1f;
+}
+
+.rare .header {
+    border-top-color: #f58b1f;
+    border-right-color: #f58b1f;
+    border-left-color: #f58b1f;
+}
+
+.rare .title .type {
+    background-color: #f58b1f;
+}
+
+.rare .title .type:before {
+    border-bottom-color: #f58b1f;
+}
+
+.rare .title .type:after {
+    border-top-color:#f58b1f;
+    border-right-color:transparent;
+}
+
+.rare .cost:before {
+    border-bottom-color: #f58b1f;
+    border-left-color: transparent;
+}
+
+.rare .description {
+    border-left-color: #f68421;
+    border-right-color: #f68421;
+}
+
+.rare .rules > div {
+    background-color: #f68421;
+    border-color: #f68421;
+}
+
+.rare .stat_line .value {
+    background-color: #fee6ca;
+}
+
+.rare .effects {
+    background-color: #fee6ca;
+}
+
+.rare .rules .rule_description {
+    background-color: #fee6ca;
+}
+
+.rules > div.rare {
+    background-color: #f68421;
+    border-color: #f68421;
+} 
+
+.rules > div.rare .rule_description,
+.rules > div.rare .value,
+.rules > div.rare .effects
+{
+    background-color: #fee6ca;
+} 
+
+.rare.module .logo_container {
+    border-color: #f68421;
+    background: radial-gradient(circle, 
+        #f68421 0%, 
+        transparent 100%
+    ),
+    #2b2c2c;
+}
+
+.rare.module .header {
+    background: 
+        linear-gradient(90deg,
+            transparent 0px,
+            #2b2c2c 40%
+        ),
+        linear-gradient(90deg, 
+            #2b2c2c calc(6px - 1px), 
+            transparent 1%
+        ) center / 6px 6px,
+        linear-gradient(
+            #2b2c2c calc(6px - 1px),
+            transparent 1%
+        ) center / 6px 6px,
+        #f58b1f;
+}
+
+/* Prestige */
+
+.prestige.equipment {
+    background-color: #e7ebee;
+}
+
+.prestige.equipment:before {
+    border-top-color: #797e81;
+}
+
+.prestige .header {
+    border-top-color: #797e81;
+    border-right-color: #797e81;
+    border-left-color: #797e81;
+}
+
+.prestige .title .type {
+    background: linear-gradient(135deg,
+        #797e81 35%, 
+        white 47%, 
+        white 53%, 
+        #797e81 65%,
+        #797e81 100%
+    );
+}
+
+.prestige .title .type:before {
+    border-bottom-color: #797e81;
+}
+
+.prestige .title .type:after {
+    border-top-color:#797e81;
+    border-right-color:transparent;
+}
+
+.prestige .cost:before {
+    border-bottom-color: #797e81;
+    border-left-color: transparent;
+}
+
+.prestige .description {
+    border-left-color: #9d9d9c;
+    border-right-color: #9d9d9c;
+}
+
+.prestige .rules > div {
+    background-color: #9d9d9c;
+    border-color: #9d9d9c;
+}
+
+.prestige .stat_line .value {
+    background-color: #e7ebee;
+}
+
+.prestige .effects {
+    background-color: #e7ebee;
+}
+
+.prestige .rules .rule_description {
+    background-color: #e7ebee;
+}
+
+.rules > div.prestige {
+    background-color: #9d9d9c;
+    border-color: #9d9d9c;
+} 
+
+.rules > div.prestige .rule_description,
+.rules > div.prestige .value,
+.rules > div.prestige .effects
+{
+    background-color: #e7ebee;
+} 
+
+.prestige.module .logo_container {
+    border-color: #9d9d9c;
+    background: radial-gradient(circle, 
+        #9d9d9c 0%, 
+        transparent 100%
+    ),
+    #2b2c2c;
+}
+
+.prestige.module .header {
+    background: 
+        linear-gradient(90deg,
+            transparent 0px,
+            #2b2c2c 40%
+        ),
+        linear-gradient(90deg, 
+            #2b2c2c calc(6px - 1px), 
+            transparent 1%
+        ) center / 6px 6px,
+        linear-gradient(
+            #2b2c2c calc(6px - 1px),
+            transparent 1%
+        ) center / 6px 6px,
+        #797e81;
+}
+
+/* Hope */
+
+.hope.equipment {
+    background-color: #f1e7d2;
+}
+
+.hope.equipment:before {
+    border-top-color: #b88434;
+}
+
+.hope .header {
+    border-top-color: #b88434;
+    border-right-color: #b88434;
+    border-left-color: #b88434;
+}
+
+.hope .title .type {
+    background: linear-gradient(135deg,
+        #b88434 35%, 
+        white 47%, 
+        white 53%, 
+        #b88434 65%,
+        #b88434 100%
+    );
+}
+
+.hope .title .type:before {
+    border-bottom-color: #b88434;
+}
+
+.hope .title .type:after {
+    border-top-color:#b88434;
+    border-right-color:transparent;
+}
+
+.hope .cost:before {
+    border-bottom-color: #b88434;
+    border-left-color: transparent;
+}
+
+.hope .description {
+    border-left-color: #ba881d;
+    border-right-color: #ba881d;
+}
+
+.hope .rules > div {
+    background-color: #ba881d;
+    border-color: #ba881d;
+}
+
+.hope .stat_line .value {
+    background-color: #f1e7d2;
+}
+
+.hope .effects {
+    background-color: #f1e7d2;
+}
+
+.hope .rules .rule_description {
+    background-color: #f1e7d2;
+}
+
+.rules > div.hope {
+    background-color: #ba881d;
+    border-color: #ba881d;
+} 
+
+.rules > div.hope .rule_description,
+.rules > div.hope .value,
+.rules > div.hope .effects
+{
+    background-color: #f1e7d2;
+} 
+
+.hope.module .logo_container {
+    border-color: #ba881d;
+    background: radial-gradient(circle, 
+        #ba881d 0%, 
+        transparent 100%
+    ),
+    #2b2c2c;
+}
+
+.prestige.module .header {
+    background: 
+        linear-gradient(90deg,
+            transparent 0px,
+            #2b2c2c 40%
+        ),
+        linear-gradient(90deg, 
+            #2b2c2c calc(6px - 1px), 
+            transparent 1%
+        ) center / 6px 6px,
+        linear-gradient(
+            #2b2c2c calc(6px - 1px),
+            transparent 1%
+        ) center / 6px 6px,
+        #b88434;
+}
